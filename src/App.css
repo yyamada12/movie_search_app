@@ -12,9 +12,31 @@
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 20px;
-  cursor: pointer;
 }
 
 .App-header h2 {
   margin: 0;
+}
+
+.search {
+  margin-top: 10px;
+}
+
+.search input[type="text"] {
+  width: 40%;
+  min-width: 200px;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.search input[type="submit"] {
+  margin-left: 10px;
+  height: 30px;
+  border: solid 1px;
+  cursor: pointer;
+}
+
+.search input[type="submit"]:hover {
+  background-color: #282c34;
+  color: antiquewhite;
 }
