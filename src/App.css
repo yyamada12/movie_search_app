@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -26,7 +30,6 @@
   width: 40%;
   min-width: 200px;
   height: 30px;
-  box-sizing: border-box;
 }
 
 .search input[type="submit"] {
@@ -39,4 +42,21 @@
 .search input[type="submit"]:hover {
   background-color: #282c34;
   color: antiquewhite;
+}
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.movie {
+  padding: 5px 25px 10px 25px;
+  min-width: 25%;
+}
+
+.errorMessage {
+  margin: auto;
+  font-weight: bold;
+  color: rgb(161, 15, 15);
 }
