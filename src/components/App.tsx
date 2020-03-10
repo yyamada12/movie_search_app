@@ -39,25 +39,18 @@ const reducer = (state: IState, action: IAction) => {
         errorMessage: null
       };
     case ActionType.SEARCH_MOVIES_SUCCESS:
-      if (action.payload) {
-        return {
-          ...state,
-          loading: false,
-          movies: action.payload
-        };
-      } else {
-        return state;
-      }
+      return action.payload ? {
+        ...state,
+        loading: false,
+        movies: action.payload
+      } : state;
+
     case ActionType.SEARCH_MOVIES_FAILURE:
-      if (action.error) {
-        return {
-          ...state,
-          loading: false,
-          errorMessage: action.error
-        };
-      } else {
-        return state;
-      }
+      return action.error ? {
+        ...state,
+        loading: false,
+        errorMessage: action.error
+      } : state;
     default:
       return state;
   }
@@ -111,12 +104,12 @@ const App = () => {
       ) : errorMessage ? (
         <div className="errorMessage">{errorMessage}</div>
       ) : (
-        <div className="movies">
-          {movies.map((m, i) => (
-            <Movie key={i} movie={m} />
-          ))}
-        </div>
-      )}
+            <div className="movies">
+              {movies.map((m, i) => (
+                <Movie key={i} movie={m} />
+              ))}
+            </div>
+          )}
     </div>
   );
 };
